@@ -2,7 +2,6 @@ const fs = require('fs');
 const path = require('path');
 const marked = require('markdown-it')();
 const nunjucks = require('nunjucks');
-const express = require('express');
 
 // Set up Nunjucks environment
 const templatesDir = path.join(__dirname, 'templates');
@@ -60,21 +59,6 @@ function generatePages() {
     }
   });
 }
-
-// Create an Express app for production server
-const app = express();
-
-// Serve static files from the 'public' directory
-app.use(express.static('public'));
-
-// Serve generated HTML files from the 'output' directory
-app.use(express.static('output'));
-
-// Start the server
-const port = process.env.PORT || 3000;
-app.listen(port, () => {
-  console.log(`Production server is running on http://localhost:${port}`);
-});
 
 // Generate the pages
 generatePages();
