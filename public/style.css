@@ -1,12 +1,18 @@
 body {
   font-family: serif;
   margin: 20px;
+  background-color: #121212:
+  color: #fff;
 }
 
 h1 {
-  color: #333;
+  color: #fff;
 }
 
 a {
   color: #007BFF;
+}
+
+hr {
+  color: #fff;
 }
