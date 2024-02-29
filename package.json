@@ -1,10 +1,10 @@
 {
-  "name": "your-static-site-generator",
+  "name": "VoidSSG",
   "version": "1.0.0",
   "description": "A simple static site generator with Nunjucks and Markdown",
   "main": "generator.js",
   "scripts": {
-    "start": "node generator.js && live-server --port=8080 --host=0.0.0.0 --wait=1000 --open=false"
+    "start": "node generator.js"
   },
   "dependencies": {
     "express": "^4.18.3",
@@ -20,6 +20,6 @@
     "markdown",
     "live-server"
   ],
-  "author": "Your Name",
+  "author": "Prakhar",
   "license": "ISC"
 }
