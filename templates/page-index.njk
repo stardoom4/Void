@@ -29,7 +29,7 @@
         <h2>All Pages</h2>
         <ul>
             {% for filename in pageFiles %}
-                <li><a href="/output/{{ filename.replace(/\.md$/, '.html') }}">{{ filename.replace(/\.md$/, '') }}</a></li>
+              <li><a href="/output/{{ filename | replace('.md', '.html') }}">{{ filename | replace('.md', '') }}</a></li>
             {% endfor %}
         </ul>
     </main>
