@@ -7,31 +7,6 @@ const nunjucks = require('nunjucks');
 const templatesDir = path.join(__dirname, 'templates');
 const outputDir = path.join(__dirname, 'output');
 
-// Function to read site metadata from site.json
-function readSiteMetadata() {
-  const siteJsonPath = path.join(__dirname, 'site.json');
-
-  try {
-    const data = fs.readFileSync(siteJsonPath, 'utf-8');
-    return JSON.parse(data);
-  } catch (error) {
-    console.error(`Error reading site.json: ${error.message}`);
-    return {};
-  }
-}
-
-// Function to parse metadata and content from markdown
-function parseMarkdown(content) {
-  // ... (unchanged)
-
-  // Update the body content without metadata
-  body = lines.slice(endIndex + 1).join('\n');
-}
-
-// Function to generate pages and page index
-function generatePages() {
-  const siteMetadata = readSiteMetadata();
-
 // Create the output directory if it doesn't exist
 if (!fs.existsSync(outputDir)) {
   fs.mkdirSync(outputDir);
