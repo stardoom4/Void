@@ -34,4 +34,4 @@ jobs:
       uses: JamesIves/github-pages-deploy-action@4.2.0
       with:
         branch: main  # Deploy to the gh-pages branch
-        folder: pages    # Specify the folder containing your built files
+        folder: output # Specify the folder containing your built files
