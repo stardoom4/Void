@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const marked = require('markdown-it')();
 const nunjucks = require('nunjucks');
+const liveServer = require('live-server');
 
 // Set up Nunjucks environment
 const templatesDir = path.join(__dirname, 'templates');
@@ -59,6 +60,30 @@ function generatePages() {
     }
   });
 }
+// Function to start the live server
+function startLiveServer() {
+  const serverParams = {
+    port: 3000, // Choose a port that suits your needs
+    root: path.join(__dirname, 'output'),
+    open: false,
+    wait: 500,
+  };
 
-// Generate the pages
-generatePages();
+  liveServer.start(serverParams);
+
+  console.log(`Dev server is running at http://localhost:${serverParams.port}`);
+}
+
+// Check if it's a local development environment
+const isDev = process.env.NODE_ENV === 'development';
+
+if (isDev) {
+  // If it's a local development environment, start the live server
+  startLiveServer();
+} else {
+  // If it's a deployment environment (e.g., Netlify), skip the live server
+  console.log('Void generation completed.');
+
+  // Call generatePages() at the end
+  generatePages();
+}
