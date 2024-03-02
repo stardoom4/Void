@@ -16,7 +16,6 @@
     "dev": "npx eleventy && NODE_ENV=development node void.js",
     "compile": "pkg void.js --output void-bin",
     "start": "npm run build && npm run compile && node void-bin",
-    // other configurations...
   },
   "devDependencies": {
     "live-server": "^1.2.1",
