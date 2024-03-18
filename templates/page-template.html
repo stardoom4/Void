@@ -8,11 +8,22 @@
   <title>{{ title }}</title>
 </head>
 <body>
+   <!-- Search component -->
+    <div id="search">
+        <h2>Search</h2>
+        <form id="searchForm">
+            <input type="text" id="searchInput" placeholder="Enter search query">
+            <button type="submit">Search</button>
+        </form>
+        <div id="searchResults"></div>
+    </div>
+  <hr>
   <h1>{{ title }}</h1>
   <hr>
   <div>
     {{ content | safe }}
   </div>
   <hr>
+   <script src="search.js"></script>
 </body>
 </html>
