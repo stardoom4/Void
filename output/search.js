@@ -1,29 +1,37 @@
-document.getElementById('searchForm').addEventListener('submit', function(event) {
-  event.preventDefault();
-  const searchQuery = document.getElementById('searchInput').value.toLowerCase();
+$(document).ready(function() {
+    $('#searchBtn').on('click', function() {
+        var searchQuery = $('#searchInput').val().toLowerCase();
+        var searchResults = [];
 
-  fetch('search-data.json')
-    .then(response => response.json())
-    .then(data => {
-      const results = data.filter(page => page.title.toLowerCase().includes(searchQuery));
-      displayResults(results);
-    })
-    .catch(error => console.error('Error fetching search data:', error));
+        // Perform search logic (dummy data for demonstration)
+        var pages = [
+            { title: 'Lorem', url: '/lorem.html' },
+            { title: 'About', url: '/about.html' },
+            { title: 'Page 3', url: '/page3.html' }
+        ];
+
+        // Filter pages based on search query
+        pages.forEach(function(page) {
+            if (page.title.toLowerCase().includes(searchQuery)) {
+                searchResults.push(page);
+            }
+        });
+
+        // Display search results
+        displayResults(searchResults);
+    });
 });
 
 function displayResults(results) {
-  const resultsContainer = document.getElementById('searchResults');
-  resultsContainer.innerHTML = '';
+    var resultsContainer = $('#searchResults');
+    resultsContainer.empty();
 
-  if (results.length === 0) {
-    resultsContainer.innerHTML = 'No results found.';
-  } else {
-    results.forEach(result => {
-      const link = document.createElement('a');
-      link.href = result.url;
-      link.textContent = result.title;
-      resultsContainer.appendChild(link);
-      resultsContainer.appendChild(document.createElement('br'));
-    });
-  }
+    if (results.length === 0) {
+        resultsContainer.text('No results found.');
+    } else {
+        results.forEach(function(result) {
+            var link = $('<a>').attr('href', result.url).text(result.title);
+            resultsContainer.append(link).append('<br>');
+        });
+    }
 }
