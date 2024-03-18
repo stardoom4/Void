@@ -9,12 +9,12 @@
       <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
- <input type="text" id="searchInput" placeholder="Enter search query">
+  <header>
+     <h1>{{ title }}</h1>
+     <input type="text" id="searchInput" placeholder="Enter search query">
     <button id="searchBtn">Search</button>
-    <div id="searchResults"></div>
-
-  <hr>
-  <h1>{{ title }}</h1>
+  </header>
+  <div id="searchResults"></div>
   <hr>
   <div>
     {{ content | safe }}
