@@ -1,3 +1,8 @@
+header {
+    display: flex;
+    align-items: center;
+}
+
 body {
   font-family: Garamond, serif;;
   background-color: #080c0c;
