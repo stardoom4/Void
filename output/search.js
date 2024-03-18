@@ -3,9 +3,8 @@ $(document).ready(function() {
     function filterResults(searchQuery) {
         var filteredResults = [];
         var pages = [
-            { title: 'Page 1', url: '/page1.html' },
-            { title: 'Page 2', url: '/page2.html' },
-            { title: 'Page 3', url: '/page3.html' }
+            { title: 'About', url: '/about.html' },
+            { title: 'Lorem', url: '/lorem.html' }
         ];
 
         // Filter pages based on search query
