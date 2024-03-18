@@ -9,11 +9,9 @@ $(document).ready(function() {
         ];
 
         // Filter pages based on search query
-        if (searchQuery.trim() !== '') { // Only filter if search query is not empty
-            pages.forEach(function(page) {
-                if (page.title.toLowerCase().includes(searchQuery.toLowerCase())) {
-                    filteredResults.push(page);
-                }
+        if (searchQuery.trim() !== '') {
+            filteredResults = pages.filter(function(page) {
+                return page.title.toLowerCase().includes(searchQuery.toLowerCase());
             });
         }
 
@@ -33,15 +31,6 @@ $(document).ready(function() {
                 resultsContainer.append(link).append('<br>');
             });
         }
-    }
-
-    // Event listener for search input keyup event
-    $('#searchInput').on('keyup', function() {
-        var searchQuery = $(this).val();
-        var filteredResults = filterResults(searchQuery);
-        displayResults(filteredResults);
-    });
-});
     }
 
     // Event listener for search input keyup event
