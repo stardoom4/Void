@@ -1,8 +1,3 @@
-header {
-    display: flex;
-    align-items: center;
-}
-
 body {
   font-family: Garamond, serif;;
   background-color: #080c0c;
@@ -108,26 +103,12 @@ blockquote p {
 
 /* Styles for search input and button */
 #searchInput {
-    padding: 10px;
-    font-size: 16px;
+    padding: 6px;
+    font-size: 12px;
     border: 2px solid #ccc;
     border-radius: 5px;
     margin-right: 10px;
-    width: 200px;
-}
-
-#searchBtn {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-#searchBtn:hover {
-    background-color: #0056b3;
+    width: 160px;
 }
 
 /* Styles for search results */
