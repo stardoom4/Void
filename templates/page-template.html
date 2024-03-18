@@ -6,17 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/style.css">
   <title>{{ title }}</title>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-   <!-- Search component -->
-    <div id="search">
-        <h2>Search</h2>
-        <form id="searchForm">
-            <input type="text" id="searchInput" placeholder="Enter search query">
-            <button type="submit">Search</button>
-        </form>
-        <div id="searchResults"></div>
-    </div>
+ <input type="text" id="searchInput" placeholder="Enter search query">
+    <button id="searchBtn">Search</button>
+    <div id="searchResults"></div>
+
   <hr>
   <h1>{{ title }}</h1>
   <hr>
@@ -24,6 +20,7 @@
     {{ content | safe }}
   </div>
   <hr>
-   <script src="/search.js"></script>
+   
+    <script src="search.js"></script>
 </body>
 </html>
